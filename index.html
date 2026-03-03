@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kumawat eMitra & Computers | आसींद, भीलवाड़ा</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --saffron: #FF6B00;
+  --deep-blue: #003580;
+  --sky: #0052CC;
+  --gold: #F5A623;
+  --cream: #FFF8F0;
+  --white: #FFFFFF;
+  --dark: #1A1A2E;
+  --text: #2D3748;
+  --muted: #718096;
+  --green: #00875A;
+  --light-saffron: #FFF3E8;
+  --light-blue: #E8F0FF;
+  --card-shadow: 0 4px 24px rgba(0,53,128,0.10);
+  --hover-shadow: 0 12px 40px rgba(255,107,0,0.18);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Poppins', sans-serif; color: var(--text); background: var(--cream); overflow-x: hidden; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 100;
+  background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
+  border-bottom: 3px solid var(--saffron);
+  padding: 0 1.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 70px; box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+}
+.nav-logo { display: flex; align-items: center; gap: 12px; }
+.logo-icon {
+  width: 46px; height: 46px;
+  background: linear-gradient(135deg, var(--saffron), var(--gold));
+  border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  font-size: 22px; color: white; font-weight: 800;
+  box-shadow: 0 4px 12px rgba(255,107,0,0.3); flex-shrink: 0;
+}
+.logo-text { font-family: 'Baloo 2', cursive; }
+.logo-text .name { font-size: 1.05rem; font-weight: 800; color: var(--deep-blue); line-height: 1; }
+.logo-text .tagline { font-size: 0.6rem; color: var(--saffron); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+.nav-links { display: flex; gap: 1.3rem; list-style: none; }
+.nav-links a { text-decoration: none; color: var(--text); font-weight: 500; font-size: 0.8rem; transition: color 0.2s; white-space: nowrap; }
+.nav-links a:hover { color: var(--saffron); }
+.nav-cta {
+  background: linear-gradient(135deg, var(--saffron), #FF8C38);
+  color: white; border: none; padding: 9px 16px;
+  border-radius: 8px; font-weight: 600; font-size: 0.8rem;
+  cursor: pointer; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; white-space: nowrap;
+}
+.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,107,0,0.35); }
+
+/* TICKER */
+.ticker-wrap { background: var(--deep-blue); color: white; padding: 10px 0; overflow: hidden; white-space: nowrap; }
+.ticker-content { display: inline-block; animation: ticker 50s linear infinite; font-size: 0.8rem; font-weight: 500; }
+.ticker-item { display: inline-block; padding: 0 2.5rem; }
+.ticker-dot { color: var(--gold); margin-right: 0.4rem; }
+@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--deep-blue) 0%, #001F5C 40%, #003580 100%);
+  position: relative; display: flex; align-items: center; overflow: hidden; padding-top: 70px;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.hero-ashoka {
+  position: absolute; right: -60px; top: 50%; transform: translateY(-50%);
+  width: 520px; height: 520px;
+  background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
+  border-radius: 50%; border: 1px solid rgba(255,255,255,0.06);
+}
+.tricolor-bar {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 5px;
+  background: linear-gradient(to right, var(--saffron) 33.3%, white 33.3% 66.6%, #138808 66.6%);
+}
+.hero-content {
+  position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 3rem 2rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+  padding: 6px 16px; border-radius: 50px;
+  color: var(--gold); font-size: 0.7rem; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase; margin-bottom: 1.5rem; animation: fadeInDown 0.6s ease;
+}
+.hero-title {
+  font-family: 'Baloo 2', cursive; font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 800; color: white; line-height: 1.15; margin-bottom: 1rem; animation: fadeInDown 0.7s ease;
+}
+.hero-title .highlight { color: var(--gold); }
+.hero-subtitle {
+  font-family: 'Noto Sans Devanagari', sans-serif; font-size: 1rem;
+  color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 2rem; animation: fadeInDown 0.8s ease;
+}
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeInDown 0.9s ease; }
+.btn-primary {
+  background: linear-gradient(135deg, var(--saffron), #FF8C38);
+  color: white; padding: 14px 26px; border-radius: 10px; font-weight: 700; font-size: 0.9rem;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+  box-shadow: 0 6px 24px rgba(255,107,0,0.4); transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(255,107,0,0.5); }
+.btn-secondary {
+  background: rgba(255,255,255,0.1); color: white; border: 2px solid rgba(255,255,255,0.3);
+  padding: 14px 26px; border-radius: 10px; font-weight: 600; font-size: 0.9rem;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s;
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.18); }
+.hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; animation: fadeInUp 1s ease; }
+.stat-card {
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px; padding: 1.3rem; text-align: center; backdrop-filter: blur(4px);
+  transition: background 0.2s, transform 0.2s;
+}
+.stat-card:hover { background: rgba(255,255,255,0.13); transform: translateY(-4px); }
+.stat-number { font-family: 'Baloo 2', cursive; font-size: 1.8rem; font-weight: 800; color: var(--gold); line-height: 1; }
+.stat-label { font-size: 0.68rem; color: rgba(255,255,255,0.6); margin-top: 4px; }
+
+/* SECTION COMMON */
+section { padding: 5rem 2rem; }
+.section-max { max-width: 1200px; margin: 0 auto; }
+.section-header { text-align: center; margin-bottom: 3.5rem; }
+.section-badge {
+  display: inline-block; background: var(--light-saffron); color: var(--saffron);
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  padding: 6px 16px; border-radius: 50px; margin-bottom: 1rem;
+}
+.section-title { font-family: 'Baloo 2', cursive; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 800; color: var(--deep-blue); margin-bottom: 0.75rem; }
+.section-title .accent { color: var(--saffron); }
+.section-subtitle { color: var(--muted); font-size: 0.95rem; max-width: 580px; margin: 0 auto; line-height: 1.7; }
+
+/* SERVICES */
+.services-bg { background: white; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1.3rem; }
+.service-card {
+  background: var(--cream); border: 2px solid transparent; border-radius: 16px;
+  padding: 1.5rem 1rem; text-align: center; cursor: pointer;
+  transition: all 0.25s ease; position: relative; overflow: hidden;
+}
+.service-card::before {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(to right, var(--saffron), var(--gold));
+  transform: scaleX(0); transition: transform 0.3s;
+}
+.service-card:hover::before { transform: scaleX(1); }
+.service-card:hover { border-color: rgba(255,107,0,0.2); box-shadow: var(--hover-shadow); transform: translateY(-5px); background: white; }
+.service-icon { font-size: 2.1rem; margin-bottom: 0.8rem; display: block; }
+.service-name { font-weight: 700; color: var(--deep-blue); font-size: 0.85rem; line-height: 1.4; margin-bottom: 0.35rem; }
+.service-desc { font-size: 0.71rem; color: var(--muted); }
+.badge-new {
+  position: absolute; top: 9px; right: 9px;
+  background: var(--saffron); color: white;
+  font-size: 0.58rem; font-weight: 800; padding: 2px 7px; border-radius: 50px; letter-spacing: 0.5px;
+}
+.badge-hot { background: #D32F2F; }
+
+/* YOJANA */
+.yojana-bg { background: var(--cream); }
+.search-box {
+  display: flex; max-width: 520px; margin: 0 auto 2.5rem;
+  background: white; border: 2px solid rgba(0,53,128,0.15); border-radius: 12px;
+  overflow: hidden; box-shadow: var(--card-shadow); transition: border-color 0.2s;
+}
+.search-box:focus-within { border-color: var(--saffron); }
+.search-box input { flex: 1; padding: 14px 18px; border: none; outline: none; font-size: 0.88rem; font-family: 'Poppins', sans-serif; }
+.search-box button { padding: 0 20px; background: var(--saffron); border: none; cursor: pointer; color: white; font-size: 1.1rem; }
+.filter-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2.5rem; }
+.filter-tab {
+  padding: 7px 16px; border-radius: 50px; border: 2px solid rgba(0,53,128,0.15);
+  background: white; color: var(--text); font-size: 0.77rem; font-weight: 600; cursor: pointer; transition: all 0.2s;
+}
+.filter-tab:hover { background: var(--deep-blue); color: white; border-color: var(--deep-blue); }
+.filter-tab.active { background: var(--saffron); color: white; border-color: var(--saffron); }
+.yojana-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 1.6rem; }
+.yojana-card {
+  background: white; border-radius: 18px; overflow: hidden;
+  box-shadow: var(--card-shadow); transition: transform 0.25s, box-shadow 0.25s; display: flex; flex-direction: column;
+}
+.yojana-card:hover { transform: translateY(-6px); box-shadow: var(--hover-shadow); }
+.yojana-card-header { padding: 1.3rem; display: flex; align-items: flex-start; gap: 1rem; }
+.yojana-icon { width: 50px; height: 50px; border-radius: 13px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+.yojana-meta { flex: 1; }
+.yojana-name { font-weight: 700; color: var(--deep-blue); font-size: 0.93rem; margin-bottom: 0.3rem; line-height: 1.3; }
+.yojana-category { font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 50px; }
+.yojana-card-body { padding: 0 1.3rem 1.3rem; flex: 1; }
+.yojana-desc { font-size: 0.79rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.6; }
+.docs-label {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  color: var(--deep-blue); margin-bottom: 0.65rem; display: flex; align-items: center; gap: 6px;
+}
+.docs-label::before { content: '📋'; font-size: 0.8rem; }
+.doc-list { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+.doc-item {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.77rem; color: var(--text); padding: 6px 10px;
+  background: var(--cream); border-radius: 7px;
+}
+.doc-item::before {
+  content: '✓'; width: 16px; height: 16px; min-width: 16px;
+  background: var(--green); color: white; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; font-size: 0.6rem; font-weight: 700;
+}
+.yojana-card-footer {
+  padding: 0.9rem 1.3rem; border-top: 1px solid rgba(0,0,0,0.06);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.fee-badge { font-size: 0.76rem; font-weight: 700; color: var(--green); }
+.apply-btn {
+  background: linear-gradient(135deg, var(--saffron), #FF8C38);
+  color: white; border: none; padding: 8px 16px; border-radius: 8px;
+  font-size: 0.75rem; font-weight: 600; cursor: pointer; transition: transform 0.2s;
+  text-decoration: none; display: inline-block;
+}
+.apply-btn:hover { transform: scale(1.05); }
+
+/* ADVOCATE SHOWCASE */
+.advocate-bg {
+  background: linear-gradient(135deg, #0a0a1a 0%, #001233 50%, #003580 100%);
+  position: relative; overflow: hidden;
+}
+.advocate-bg::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(245,166,35,0.08) 0%, transparent 60%);
+}
+.advocate-wrap {
+  display: grid; grid-template-columns: auto 1fr; gap: 4rem; align-items: center;
+  position: relative; z-index: 1;
+}
+.advocate-photo-ring {
+  width: 210px; height: 210px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--saffron), var(--gold), var(--saffron));
+  padding: 4px; position: relative;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 40px rgba(245,166,35,0.3), 0 0 80px rgba(245,166,35,0.1); }
+  50% { box-shadow: 0 0 70px rgba(245,166,35,0.5), 0 0 140px rgba(245,166,35,0.2); }
+}
+.advocate-photo-inner {
+  width: 100%; height: 100%; border-radius: 50%;
+  background: linear-gradient(135deg, #1a2a4a, #003580);
+  display: flex; align-items: center; justify-content: center; font-size: 5rem;
+}
+.adv-ribbon {
+  position: absolute; bottom: 8px; right: -14px;
+  background: linear-gradient(135deg, var(--saffron), var(--gold));
+  color: white; font-size: 0.65rem; font-weight: 800;
+  padding: 5px 14px; border-radius: 50px; white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(255,107,0,0.5);
+}
+.adv-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  color: var(--gold); font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1rem;
+}
+.adv-eyebrow span { width: 30px; height: 1px; background: var(--gold); opacity: 0.4; }
+.adv-name {
+  font-family: 'Baloo 2', cursive; font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 800; color: white; line-height: 1.1; margin-bottom: 0.4rem;
+}
+.adv-designation { font-size: 0.95rem; color: rgba(255,255,255,0.6); margin-bottom: 1.4rem; }
+.adv-divider { width: 55px; height: 3px; background: linear-gradient(to right, var(--saffron), var(--gold)); border-radius: 2px; margin-bottom: 1.4rem; }
+.adv-desc {
+  font-family: 'Noto Sans Devanagari', sans-serif; font-size: 0.93rem;
+  color: rgba(255,255,255,0.68); line-height: 1.8; margin-bottom: 1.8rem; max-width: 520px;
+}
+.adv-tags { display: flex; gap: 0.65rem; flex-wrap: wrap; margin-bottom: 1.8rem; }
+.adv-tag {
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.82); padding: 5px 14px; border-radius: 50px; font-size: 0.75rem; font-weight: 500;
+}
+.adv-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.adv-btn-gold {
+  background: linear-gradient(135deg, var(--gold), #d98800);
+  color: var(--dark); padding: 12px 24px; border-radius: 10px;
+  font-weight: 800; font-size: 0.88rem; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  box-shadow: 0 6px 24px rgba(245,166,35,0.4); transition: transform 0.2s, box-shadow 0.2s;
+}
+.adv-btn-gold:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(245,166,35,0.6); }
+.adv-btn-outline {
+  background: transparent; color: rgba(255,255,255,0.82);
+  border: 2px solid rgba(255,255,255,0.25); padding: 12px 24px; border-radius: 10px;
+  font-weight: 600; font-size: 0.88rem; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s;
+}
+.adv-btn-outline:hover { background: rgba(255,255,255,0.1); }
+
+/* WHY US */
+.whyus-bg { background: white; }
+.whyus-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.8rem; }
+.why-card { padding: 1.8rem; border-radius: 16px; background: var(--light-blue); border-left: 4px solid var(--sky); transition: transform 0.2s; }
+.why-card:hover { transform: translateY(-4px); }
+.why-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+.why-title { font-weight: 700; color: var(--deep-blue); margin-bottom: 0.4rem; font-size: 0.95rem; }
+.why-text { font-size: 0.81rem; color: var(--muted); line-height: 1.7; }
+
+/* CONTACT */
+.contact-bg { background: linear-gradient(135deg, var(--deep-blue), #001F5C); position: relative; overflow: hidden; }
+.contact-bg::before {
+  content: ''; position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; position: relative; z-index: 1; }
+.contact-items { display: flex; flex-direction: column; gap: 1.1rem; margin-top: 2rem; }
+.contact-item {
+  display: flex; align-items: center; gap: 1rem;
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px; padding: 1rem; text-decoration: none; color: white;
+  transition: background 0.2s, transform 0.2s;
+}
+.contact-item:hover { background: rgba(255,255,255,0.14); transform: translateX(6px); }
+.contact-item-icon {
+  width: 44px; height: 44px; min-width: 44px;
+  background: linear-gradient(135deg, var(--saffron), var(--gold));
+  border-radius: 11px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+}
+.contact-item-label { font-size: 0.68rem; color: rgba(255,255,255,0.5); font-weight: 500; margin-bottom: 2px; }
+.contact-item-value { font-weight: 700; font-size: 0.9rem; }
+.hours-widget {
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px; padding: 1.3rem; margin-top: 1.6rem; color: white;
+}
+.hours-title { font-weight: 700; font-size: 0.85rem; margin-bottom: 0.8rem; }
+.hour-row { display: flex; justify-content: space-between; font-size: 0.78rem; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.hour-row:last-child { border-bottom: none; }
+.hour-day { color: rgba(255,255,255,0.55); }
+.hour-time { font-weight: 600; color: var(--gold); }
+.contact-form-wrap { background: white; border-radius: 20px; padding: 2.2rem; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+.contact-form-wrap h3 { font-family: 'Baloo 2', cursive; color: var(--deep-blue); font-size: 1.3rem; font-weight: 800; margin-bottom: 0.25rem; }
+.contact-form-wrap p { font-size: 0.79rem; color: var(--muted); margin-bottom: 1.5rem; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-size: 0.77rem; font-weight: 600; color: var(--text); margin-bottom: 0.38rem; }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 11px 14px; border: 2px solid rgba(0,0,0,0.1); border-radius: 10px;
+  font-family: 'Poppins', sans-serif; font-size: 0.83rem; outline: none; background: var(--cream);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  border-color: var(--saffron); box-shadow: 0 0 0 3px rgba(255,107,0,0.1); background: white;
+}
+.form-group textarea { resize: vertical; min-height: 75px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+.submit-btn {
+  width: 100%; padding: 13px;
+  background: linear-gradient(135deg, var(--saffron), #FF8C38);
+  color: white; border: none; border-radius: 10px;
+  font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.91rem;
+  cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+}
+.submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,107,0,0.4); }
+
+/* FOOTER */
+footer { background: var(--dark); color: rgba(255,255,255,0.6); text-align: center; padding: 2.5rem 1rem; font-size: 0.8rem; }
+.footer-top { font-family: 'Baloo 2', cursive; font-size: 1.1rem; font-weight: 800; color: white; margin-bottom: 0.4rem; }
+footer a { color: var(--gold); text-decoration: none; }
+.footer-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin: 0.9rem 0; }
+.footer-links a { color: rgba(255,255,255,0.45); font-size: 0.77rem; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold); }
+
+/* FLOATING WA */
+.wa-float {
+  position: fixed; bottom: 24px; right: 24px; z-index: 999;
+  background: #25D366; color: white; width: 58px; height: 58px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; font-size: 1.8rem;
+  text-decoration: none; animation: pulse 2.5s infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,0.5); }
+  50% { box-shadow: 0 6px 36px rgba(37,211,102,0.7), 0 0 0 12px rgba(37,211,102,0.1); }
+}
+
+/* ANIMATIONS */
+@keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .hero-content { grid-template-columns: 1fr; text-align: center; }
+  .hero-stats { margin-top: 1rem; }
+  .hero-actions { justify-content: center; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .advocate-wrap { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+  .adv-desc { margin: 0 auto 1.8rem; }
+  .adv-tags, .adv-actions { justify-content: center; }
+  .adv-eyebrow span { display: none; }
+  .nav-links { display: none; }
+  .form-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-logo">
+    <div class="logo-icon">ई</div>
+    <div class="logo-text">
+      <div class="name">Kumawat eMitra & Computers</div>
+      <div class="tagline">आसींद, भीलवाड़ा — आपकी सेवा में</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#services">सेवाएं</a></li>
+    <li><a href="#yojana">दस्तावेज़ सूची</a></li>
+    <li><a href="#advocate">Advocate</a></li>
+    <li><a href="#about">हमारे बारे में</a></li>
+    <li><a href="#contact">संपर्क</a></li>
+  </ul>
+  <a class="nav-cta" href="tel:+919414572537">📞 अभी कॉल करें</a>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker-wrap" style="margin-top:70px;">
+  <div class="ticker-content">
+    <span class="ticker-item"><span class="ticker-dot">★</span> चिरंजीवी स्वास्थ्य बीमा — पंजीकरण चालू</span>
+    <span class="ticker-item"><span class="ticker-dot">★</span> ई-स्टाम्प / GAP शपथ पत्र — सेवा उपलब्ध</span>
+    <span class="ticker-item"><span class="ticker-dot">★</span> ड्राइविंग लाइसेंस — नया व नवीनीकरण</span>
+    <span class="ticker-item"><span class="ticker-dot">★</span> पासपोर्ट / PAN Card — आवेदन करें</span>
+    <span class="ticker-item"><span class="ticker-dot">★</span> सरकारी वैकेंसी फॉर्म — Online भरवाएं</span>
+    <span class="ticker-item"><span class="ticker-dot">★</span> जाति / मूल निवास / आय प्रमाण पत्र — Same Day</span>
+    <span class="ticker-item"><span class="ticker-dot">★</span> छात्रवृत्ति / परीक्षा फॉर्म — अभी अप्लाई करें</span>
+    <span class="ticker-item"><span class="ticker-dot">★</span> Computer Job Work — Typing, Print, Design</span>
+    <span class="ticker-item"><span class="ticker-dot">★</span> पालनहार योजना — आवेदन स्वीकार हो रहे हैं</span>
+    <span class="ticker-item"><span class="ticker-dot">★</span> चिरंजीवी स्वास्थ्य बीमा — पंजीकरण चालू</span>
+    <span class="ticker-item"><span class="ticker-dot">★</span> ई-स्टाम्प / GAP शपथ पत्र — सेवा उपलब्ध</span>
+    <span class="ticker-item"><span class="ticker-dot">★</span> ड्राइविंग लाइसेंस — नया व नवीनीकरण</span>
+    <span class="ticker-item"><span class="ticker-dot">★</span> पासपोर्ट / PAN Card — आवेदन करें</span>
+    <span class="ticker-item"><span class="ticker-dot">★</span> सरकारी वैकेंसी फॉर्म — Online भरवाएं</span>
+    <span class="ticker-item"><span class="ticker-dot">★</span> जाति / मूल निवास / आय प्रमाण पत्र — Same Day</span>
+    <span class="ticker-item"><span class="ticker-dot">★</span> छात्रवृत्ति / परीक्षा फॉर्म — अभी अप्लाई करें</span>
+    <span class="ticker-item"><span class="ticker-dot">★</span> Computer Job Work — Typing, Print, Design</span>
+    <span class="ticker-item"><span class="ticker-dot">★</span> पालनहार योजना — आवेदन स्वीकार हो रहे हैं</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-ashoka"></div>
+  <div class="tricolor-bar"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-badge">🏛️ राजस्थान सरकार अधिकृत eMitra केंद्र — आसींद, भीलवाड़ा</div>
+      <h1 class="hero-title">
+        आपकी <span class="highlight">सरकारी सेवाएं</span><br>
+        एक ही छत के नीचे
+      </h1>
+      <p class="hero-subtitle">
+        आसींद और आसपास के गाँवों के लिए सभी सरकारी दस्तावेज़, ई-स्टाम्प,
+        शपथ पत्र, ड्राइविंग लाइसेंस, पासपोर्ट, योजना पंजीकरण और कंप्यूटर
+        सेवाएं — तेज़, सस्ती और 100% भरोसेमंद।
+      </p>
+      <div class="hero-actions">
+        <a href="#yojana" class="btn-primary">📋 दस्तावेज़ सूची देखें</a>
+        <a href="tel:+919414572537" class="btn-secondary">📞 अभी कॉल करें</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-stats">
+        <div class="stat-card"><div class="stat-number">60+</div><div class="stat-label">सेवाएं उपलब्ध</div></div>
+        <div class="stat-card"><div class="stat-number">5000+</div><div class="stat-label">संतुष्ट ग्राहक</div></div>
+        <div class="stat-card"><div class="stat-number">7+</div><div class="stat-label">वर्षों का अनुभव</div></div>
+        <div class="stat-card"><div class="stat-number">10 AM</div><div class="stat-label">प्रतिदिन खुलता है</div></div>
+        <div class="stat-card"><div class="stat-number">₹20</div><div class="stat-label">शुरुआती शुल्क</div></div>
+        <div class="stat-card"><div class="stat-number">⭐ 4.9</div><div class="stat-label">Customer Rating</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-bg" id="services">
+  <div class="section-max">
+    <div class="section-header fade-in">
+      <div class="section-badge">🛎️ हमारी सेवाएं</div>
+      <h2 class="section-title">हम क्या <span class="accent">सेवाएं</span> देते हैं?</h2>
+      <p class="section-subtitle">आधार से लेकर ई-स्टाम्प, शपथ पत्र, ड्राइविंग लाइसेंस, पासपोर्ट और कंप्यूटर जॉब वर्क — सब एक ही जगह।</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card fade-in">
+        <span class="service-icon">🪪</span>
+        <div class="service-name">Jan Aadhar Card</div>
+        <div class="service-desc">नया पंजीकरण, सुधार व डाउनलोड</div>
+      </div>
+      <div class="service-card fade-in">
+        <span class="service-icon">🔐</span>
+        <div class="service-name">Aadhar Card सेवाएं</div>
+        <div class="service-desc">अपडेट, सुधार व नामांकन</div>
+      </div>
+      <div class="service-card fade-in">
+        <span class="service-icon">🗳️</span>
+        <div class="service-name">Voter ID</div>
+        <div class="service-desc">नया पंजीकरण व सुधार</div>
+      </div>
+      <div class="service-card fade-in">
+        <span class="service-icon">🔷</span>
+        <div class="service-name">PAN Card</div>
+        <div class="service-desc">नया आवेदन व सुधार</div>
+      </div>
+      <div class="service-card fade-in" style="position:relative;">
+        <span class="badge-new">NEW</span>
+        <span class="service-icon">📮</span>
+        <div class="service-name">Passport आवेदन</div>
+        <div class="service-desc">नया पासपोर्ट व नवीनीकरण</div>
+      </div>
+      <div class="service-card fade-in" style="position:relative;">
+        <span class="badge-new">NEW</span>
+        <span class="service-icon">🚗</span>
+        <div class="service-name">Driving Licence (DL)</div>
+        <div class="service-desc">Learner DL, Permanent, नवीनीकरण</div>
+      </div>
+      <div class="service-card fade-in" style="position:relative;">
+        <span class="badge-new badge-hot">HOT</span>
+        <span class="service-icon">🏛️</span>
+        <div class="service-name">E-Stamp / Stamp Paper</div>
+        <div class="service-desc">ई-स्टाम्प व स्टाम्प पेपर सेवा</div>
+      </div>
+      <div class="service-card fade-in" style="position:relative;">
+        <span class="badge-new badge-hot">HOT</span>
+        <span class="service-icon">📝</span>
+        <div class="service-name">GAP / शपथ पत्र</div>
+        <div class="service-desc">Gap Certificate व Affidavit</div>
+      </div>
+      <div class="service-card fade-in">
+        <span class="service-icon">📜</span>
+        <div class="service-name">जाति प्रमाण पत्र</div>
+        <div class="service-desc">SC / ST / OBC / MBC</div>
+      </div>
+      <div class="service-card fade-in">
+        <span class="service-icon">🏠</span>
+        <div class="service-name">मूल निवास प्रमाण पत्र</div>
+        <div class="service-desc">Domicile Certificate</div>
+      </div>
+      <div class="service-card fade-in">
+        <span class="service-icon">💸</span>
+        <div class="service-name">आय प्रमाण पत्र</div>
+        <div class="service-desc">Income Certificate — Same Day</div>
+      </div>
+      <div class="service-card fade-in">
+        <span class="service-icon">🏥</span>
+        <div class="service-name">Chiranjeevi Yojana</div>
+        <div class="service-desc">नि:शुल्क स्वास्थ्य बीमा</div>
+      </div>
+      <div class="service-card fade-in">
+        <span class="service-icon">👨‍👩‍👧</span>
+        <div class="service-name">पालनहार योजना</div>
+        <div class="service-desc">अनाथ बच्चों हेतु पंजीकरण</div>
+      </div>
+      <div class="service-card fade-in">
+        <span class="service-icon">🧓</span>
+        <div class="service-name">वृद्धावस्था पेंशन</div>
+        <div class="service-desc">SSP Registration व नवीनीकरण</div>
+      </div>
+      <div class="service-card fade-in" style="position:relative;">
+        <span class="badge-new">NEW</span>
+        <span class="service-icon">🎓</span>
+        <div class="service-name">छात्रवृत्ति / परीक्षा फॉर्म</div>
+        <div class="service-desc">NSP, Scholarship, Exam Form</div>
+      </div>
+      <div class="service-card fade-in" style="position:relative;">
+        <span class="badge-new badge-hot">HOT</span>
+        <span class="service-icon">📋</span>
+        <div class="service-name">Online Vacancy Form</div>
+        <div class="service-desc">REET, RPSC, Police, RRB व अन्य</div>
+      </div>
+      <div class="service-card fade-in" style="position:relative;">
+        <span class="badge-new">NEW</span>
+        <span class="service-icon">💻</span>
+        <div class="service-name">Computer Job Work</div>
+        <div class="service-desc">Typing, Print, Design, Data Entry</div>
+      </div>
+      <div class="service-card fade-in">
+        <span class="service-icon">🗺️</span>
+        <div class="service-name">भूमि रिकॉर्ड</div>
+        <div class="service-desc">Khasra, Naksha, Jamabandi</div>
+      </div>
+      <div class="service-card fade-in">
+        <span class="service-icon">🧾</span>
+        <div class="service-name">Bill Payment</div>
+        <div class="service-desc">बिजली, पानी, Mobile Recharge</div>
+      </div>
+      <div class="service-card fade-in">
+        <span class="service-icon">🏦</span>
+        <div class="service-name">Banking / Insurance</div>
+        <div class="service-desc">PMJDY, Money Transfer, Insurance</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- YOJANA DOCUMENT CARDS -->
+<section class="yojana-bg" id="yojana">
+  <div class="section-max">
+    <div class="section-header fade-in">
+      <div class="section-badge">📋 ज़रूरी दस्तावेज़</div>
+      <h2 class="section-title">किस सेवा के लिए <span class="accent">क्या चाहिए?</span></h2>
+      <p class="section-subtitle">कोई भी सेवा चुनें और जानें कि कौन से दस्तावेज़ लाने हैं — कोई उलझन नहीं, कोई बेकार चक्कर नहीं!</p>
+    </div>
+
+    <div class="search-box fade-in">
+      <input type="text" id="yojanaSearch" placeholder="🔍 कोई भी योजना या सेवा खोजें..." oninput="filterCards(this.value)">
+      <button>→</button>
+    </div>
+
+    <div class="filter-tabs fade-in">
+      <button class="filter-tab active" onclick="filterByCategory('all', this)">सभी</button>
+      <button class="filter-tab" onclick="filterByCategory('health', this)">स्वास्थ्य</button>
+      <button class="filter-tab" onclick="filterByCategory('social', this)">सामाजिक कल्याण</button>
+      <button class="filter-tab" onclick="filterByCategory('education', this)">शिक्षा / परीक्षा</button>
+      <button class="filter-tab" onclick="filterByCategory('identity', this)">प्रमाण पत्र</button>
+      <button class="filter-tab" onclick="filterByCategory('legal', this)">स्टाम्प / शपथ पत्र</button>
+      <button class="filter-tab" onclick="filterByCategory('license', this)">DL / Passport</button>
+      <button class="filter-tab" onclick="filterByCategory('property', this)">भूमि रिकॉर्ड</button>
+    </div>
+
+    <div class="yojana-grid" id="yojanaGrid">
+
+      <!-- CHIRANJEEVI -->
+      <div class="yojana-card fade-in" data-category="health" data-name="chiranjeevi swasthya bima yojana health insurance स्वास्थ्य चिरंजीवी">
+        <div class="yojana-card-header">
+          <div class="yojana-icon" style="background:#FFF0F0;">🏥</div>
+          <div class="yojana-meta">
+            <div class="yojana-name">चिरंजीवी स्वास्थ्य बीमा योजना</div>
+            <span class="yojana-category" style="background:#FFE8E8;color:#D32F2F;">स्वास्थ्य</span>
+          </div>
+        </div>
+        <div class="yojana-card-body">
+          <p class="yojana-desc">राजस्थान के परिवारों के लिए ₹25 लाख तक का मुफ्त स्वास्थ्य बीमा। BPL/NFSA के लिए सरकार प्रीमियम भरती है।</p>
+          <div class="docs-label">ज़रूरी दस्तावेज़</div>
+          <ul class="doc-list">
+            <li class="doc-item">जन आधार कार्ड</li>
+            <li class="doc-item">आधार कार्ड (सभी परिवार सदस्यों का)</li>
+            <li class="doc-item">जन आधार से जुड़ा मोबाइल नंबर</li>
+            <li class="doc-item">राशन कार्ड (BPL / NFSA होने पर)</li>
+            <li class="doc-item">बैंक पासबुक / खाता विवरण</li>
+          </ul>
+        </div>
+        <div class="yojana-card-footer">
+          <span class="fee-badge">🆓 BPL हेतु निःशुल्क | ₹850/वर्ष अन्य</span>
+          <a href="tel:+919414572537" class="apply-btn">आवेदन करें</a>
+        </div>
+      </div>
+
+      <!-- PALANHAR -->
+      <div class="yojana-card fade-in" data-category="social" data-name="palanhar yojana orphan child welfare पालनहार अनाथ">
+        <div class="yojana-card-header">
+          <div class="yojana-icon" style="background:#FFF3E0;">👨‍👩‍👧</div>
+          <div class="yojana-meta">
+            <div class="yojana-name">पालनहार योजना</div>
+            <span class="yojana-category" style="background:#FFF0CC;color:#E65100;">सामाजिक कल्याण</span>
+          </div>
+        </div>
+        <div class="yojana-card-body">
+          <p class="yojana-desc">अनाथ व परित्यक्त बच्चों के पालन-पोषण हेतु मासिक सहायता। ₹500 (0–6 वर्ष) और ₹1000 (6–18 वर्ष) प्रतिमाह।</p>
+          <div class="docs-label">ज़रूरी दस्तावेज़</div>
+          <ul class="doc-list">
+            <li class="doc-item">बच्चे का जन्म प्रमाण पत्र</li>
+            <li class="doc-item">बच्चे व अभिभावक का आधार कार्ड</li>
+            <li class="doc-item">जन आधार कार्ड</li>
+            <li class="doc-item">माता-पिता का मृत्यु प्रमाण पत्र (यदि लागू)</li>
+            <li class="doc-item">तलाक / न्यायालय आदेश (यदि लागू)</li>
+            <li class="doc-item">आय प्रमाण पत्र (₹1.20 लाख से कम)</li>
+            <li class="doc-item">बैंक पासबुक (अभिभावक की)</li>
+          </ul>
+        </div>
+        <div class="yojana-card-footer">
+          <span class="fee-badge">🆓 निःशुल्क योजना</span>
+          <a href="tel:+919414572537" class="apply-btn">आवेदन करें</a>
+        </div>
+      </div>
+
+      <!-- OLD AGE PENSION -->
+      <div class="yojana-card fade-in" data-category="social" data-name="old age pension ssp vriddha pension वृद्धावस्था पेंशन बुजुर्ग">
+        <div class="yojana-card-header">
+          <div class="yojana-icon" style="background:#FFF8E1;">🧓</div>
+          <div class="yojana-meta">
+            <div class="yojana-name">वृद्धावस्था पेंशन (SSP)</div>
+            <span class="yojana-category" style="background:#FFF8E1;color:#F57F17;">सामाजिक कल्याण</span>
+          </div>
+        </div>
+        <div class="yojana-card-body">
+          <p class="yojana-desc">55+ वर्ष (महिला) व 58+ वर्ष (पुरुष) के बुजुर्गों को ₹750–₹1000 प्रतिमाह पेंशन।</p>
+          <div class="docs-label">ज़रूरी दस्तावेज़</div>
+          <ul class="doc-list">
+            <li class="doc-item">आधार कार्ड</li>
+            <li class="doc-item">जन आधार कार्ड</li>
+            <li class="doc-item">आयु प्रमाण (जन्म प्रमाण / Voter ID / TC)</li>
+            <li class="doc-item">आय प्रमाण पत्र (₹48,000 से कम)</li>
+            <li class="doc-item">बैंक पासबुक</li>
+            <li class="doc-item">पासपोर्ट फोटो (2 प्रति)</li>
+          </ul>
+        </div>
+        <div class="yojana-card-footer">
+          <span class="fee-badge">🆓 निःशुल्क योजना</span>
+          <a href="tel:+919414572537" class="apply-btn">आवेदन करें</a>
+        </div>
+      </div>
+
+      <!-- INCOME CERTIFICATE -->
+      <div class="yojana-card fade-in" data-category="identity" data-name="income certificate aay praman patra आय प्रमाण पत्र">
+        <div class="yojana-card-header">
+          <div class="yojana-icon" style="background:#E8F5E9;">💸</div>
+          <div class="yojana-meta">
+            <div class="yojana-name">आय प्रमाण पत्र</div>
+            <span class="yojana-category" style="background:#E8F5E9;color:#2E7D32;">प्रमाण पत्र</span>
+          </div>
+        </div>
+        <div class="yojana-card-body">
+          <p class="yojana-desc">छात्रवृत्ति, योजनाओं व कानूनी उद्देश्यों के लिए राजस्थान सरकार द्वारा जारी आधिकारिक आय प्रमाण।</p>
+          <div class="docs-label">ज़रूरी दस्तावेज़</div>
+          <ul class="doc-list">
+            <li class="doc-item">आधार कार्ड</li>
+            <li class="doc-item">जन आधार कार्ड</li>
+            <li class="doc-item">राशन कार्ड</li>
+            <li class="doc-item">स्व-घोषणा पत्र (Self Declaration)</li>
+          </ul>
+        </div>
+        <div class="yojana-card-footer">
+          <span class="fee-badge">💰 शुरू से ₹20</span>
+          <a href="tel:+919414572537" class="apply-btn">आवेदन करें</a>
+        </div>
+      </div>
+
+      <!-- CASTE CERTIFICATE -->
+      <div class="yojana-card fade-in" data-category="identity" data-name="caste certificate jati praman patra sc st obc mbc जाति प्रमाण">
+        <div class="yojana-card-header">
+          <div class="yojana-icon" style="background:#F3E5F5;">📜</div>
+          <div class="yojana-meta">
+            <div class="yojana-name">जाति प्रमाण पत्र</div>
+            <span class="yojana-category" style="background:#F3E5F5;color:#6A1B9A;">प्रमाण पत्र</span>
+          </div>
+        </div>
+        <div class="yojana-card-body">
+          <p class="yojana-desc">SC / ST / OBC / MBC जाति प्रमाण पत्र — आरक्षण, छात्रवृत्ति व सरकारी लाभों के लिए।</p>
+          <div class="docs-label">ज़रूरी दस्तावेज़</div>
+          <ul class="doc-list">
+            <li class="doc-item">आधार कार्ड</li>
+            <li class="doc-item">जन आधार कार्ड</li>
+            <li class="doc-item">पिता का जाति प्रमाण पत्र (यदि उपलब्ध)</li>
+            <li class="doc-item">राशन कार्ड</li>
+            <li class="doc-item">स्कूल TC / जाति उल्लेखित दस्तावेज़</li>
+          </ul>
+        </div>
+        <div class="yojana-card-footer">
+          <span class="fee-badge">💰 शुरू से ₹20</span>
+          <a href="tel:+919414572537" class="apply-btn">आवेदन करें</a>
+        </div>
+      </div>
+
+      <!-- DOMICILE -->
+      <div class="yojana-card fade-in" data-category="identity" data-name="domicile certificate mool niwas bona fide मूल निवास">
+        <div class="yojana-card-header">
+          <div class="yojana-icon" style="background:#E3F2FD;">🏠</div>
+          <div class="yojana-meta">
+            <div class="yojana-name">मूल निवास प्रमाण पत्र</div>
+            <span class="yojana-category" style="background:#E3F2FD;color:#0D47A1;">प्रमाण पत्र</span>
+          </div>
+        </div>
+        <div class="yojana-card-body">
+          <p class="yojana-desc">राजस्थान में स्थायी निवास का प्रमाण — सरकारी नौकरी, प्रवेश व विभिन्न योजनाओं के लिए आवश्यक।</p>
+          <div class="docs-label">ज़रूरी दस्तावेज़</div>
+          <ul class="doc-list">
+            <li class="doc-item">आधार कार्ड</li>
+            <li class="doc-item">जन आधार कार्ड</li>
+            <li class="doc-item">राशन कार्ड</li>
+            <li class="doc-item">Voter ID (राजस्थान पते सहित)</li>
+            <li class="doc-item">स्कूल TC / जन्म प्रमाण पत्र</li>
+          </ul>
+        </div>
+        <div class="yojana-card-footer">
+          <span class="fee-badge">💰 शुरू से ₹20</span>
+          <a href="tel:+919414572537" class="apply-btn">आवेदन करें</a>
+        </div>
+      </div>
+
+      <!-- E-STAMP -->
+      <div class="yojana-card fade-in" data-category="legal" data-name="e-stamp stamp paper estamp estamping legal ई-स्टाम्प स्टाम्प">
+        <div class="yojana-card-header">
+          <div class="yojana-icon" style="background:#E8F5E9;">🏛️</div>
+          <div class="yojana-meta">
+            <div class="yojana-name">E-Stamp / Stamp Paper</div>
+            <span class="yojana-category" style="background:#E8F5E9;color:#1B5E20;">स्टाम्प / शपथ पत्र</span>
+          </div>
+        </div>
+        <div class="yojana-card-body">
+          <p class="yojana-desc">किराया अनुबंध, संपत्ति विलेख, Agreement व कानूनी दस्तावेज़ों के लिए ई-स्टाम्प व स्टाम्प पेपर।</p>
+          <div class="docs-label">ज़रूरी दस्तावेज़</div>
+          <ul class="doc-list">
+            <li class="doc-item">आधार कार्ड (दोनों पक्षों का)</li>
+            <li class="doc-item">स्टाम्प की राशि व उद्देश्य</li>
+            <li class="doc-item">Agreement का विवरण</li>
+            <li class="doc-item">संपत्ति का विवरण (यदि लागू)</li>
+          </ul>
+        </div>
+        <div class="yojana-card-footer">
+          <span class="fee-badge">💰 मूल्य अनुसार शुल्क</span>
+          <a href="tel:+919414572537" class="apply-btn">आवेदन करें</a>
+        </div>
+      </div>
+
+      <!-- GAP / SHAPATH PATRA -->
+      <div class="yojana-card fade-in" data-category="legal" data-name="gap shapath patra affidavit शपथ पत्र notary gap certificate">
+        <div class="yojana-card-header">
+          <div class="yojana-icon" style="background:#FFF3E0;">📝</div>
+          <div class="yojana-meta">
+            <div class="yojana-name">GAP / शपथ पत्र (Affidavit)</div>
+            <span class="yojana-category" style="background:#FFF0CC;color:#E65100;">स्टाम्प / शपथ पत्र</span>
+          </div>
+        </div>
+        <div class="yojana-card-body">
+          <p class="yojana-desc">नाम, जन्म तिथि, पता सुधार व अन्य उद्देश्यों के लिए GAP प्रमाण पत्र व Notarized Affidavit।</p>
+          <div class="docs-label">ज़रूरी दस्तावेज़</div>
+          <ul class="doc-list">
+            <li class="doc-item">आधार कार्ड</li>
+            <li class="doc-item">जन आधार कार्ड</li>
+            <li class="doc-item">Marksheet / प्रमाण पत्र (जिसमें सुधार हो)</li>
+            <li class="doc-item">पासपोर्ट साइज फोटो (2 प्रति)</li>
+            <li class="doc-item">शपथ पत्र का उद्देश्य बताएं</li>
+          </ul>
+        </div>
+        <div class="yojana-card-footer">
+          <span class="fee-badge">💰 शुरू से ₹50</span>
+          <a href="tel:+919414572537" class="apply-btn">आवेदन करें</a>
+        </div>
+      </div>
+
+      <!-- SCHOLARSHIP -->
+      <div class="yojana-card fade-in" data-category="education" data-name="scholarship nsp chatravati post matric pre matric छात्रवृत्ति परीक्षा">
+        <div class="yojana-card-header">
+          <div class="yojana-icon" style="background:#E8EAF6;">🎓</div>
+          <div class="yojana-meta">
+            <div class="yojana-name">छात्रवृत्ति / Scholarship Form</div>
+            <span class="yojana-category" style="background:#E8EAF6;color:#283593;">शिक्षा / परीक्षा</span>
+          </div>
+        </div>
+        <div class="yojana-card-body">
+          <p class="yojana-desc">NSP व राजस्थान Scholarship — SC/ST/OBC/EWS छात्रों के लिए Pre-matric व Post-matric योजनाएं।</p>
+          <div class="docs-label">ज़रूरी दस्तावेज़</div>
+          <ul class="doc-list">
+            <li class="doc-item">आधार कार्ड (छात्र का)</li>
+            <li class="doc-item">जन आधार कार्ड</li>
+            <li class="doc-item">जाति प्रमाण पत्र</li>
+            <li class="doc-item">आय प्रमाण पत्र</li>
+            <li class="doc-item">पिछले वर्ष की Marksheet</li>
+            <li class="doc-item">Bonafide / विद्यालय नामांकन प्रमाण</li>
+            <li class="doc-item">बैंक पासबुक (छात्र की)</li>
+          </ul>
+        </div>
+        <div class="yojana-card-footer">
+          <span class="fee-badge">💰 न्यूनतम सेवा शुल्क</span>
+          <a href="tel:+919414572537" class="apply-btn">आवेदन करें</a>
+        </div>
+      </div>
+
+      <!-- ONLINE VACANCY -->
+      <div class="yojana-card fade-in" data-category="education" data-name="online vacancy form sarkari naukri reet rpsc police rrb government job pariksha वैकेंसी परीक्षा">
+        <div class="yojana-card-header">
+          <div class="yojana-icon" style="background:#E0F7FA;">📋</div>
+          <div class="yojana-meta">
+            <div class="yojana-name">Online Vacancy / Exam Form</div>
+            <span class="yojana-category" style="background:#E0F7FA;color:#00695C;">शिक्षा / परीक्षा</span>
+          </div>
+        </div>
+        <div class="yojana-card-body">
+          <p class="yojana-desc">REET, RPSC, Police, RRB, Army, Patwari व अन्य सरकारी भर्ती / परीक्षा फॉर्म Online भरवाएं।</p>
+          <div class="docs-label">ज़रूरी दस्तावेज़</div>
+          <ul class="doc-list">
+            <li class="doc-item">आधार कार्ड</li>
+            <li class="doc-item">10वीं / 12वीं / Graduation Marksheet</li>
+            <li class="doc-item">जाति प्रमाण पत्र (यदि लागू)</li>
+            <li class="doc-item">पासपोर्ट साइज फोटो (स्कैन)</li>
+            <li class="doc-item">हस्ताक्षर (स्कैन)</li>
+            <li class="doc-item">Mobile / Email (OTP के लिए)</li>
+            <li class="doc-item">Debit Card / UPI (शुल्क भुगतान)</li>
+          </ul>
+        </div>
+        <div class="yojana-card-footer">
+          <span class="fee-badge">💰 सेवा शुल्क अलग</span>
+          <a href="tel:+919414572537" class="apply-btn">आवेदन करें</a>
+        </div>
+      </div>
+
+      <!-- DRIVING LICENCE -->
+      <div class="yojana-card fade-in" data-category="license" data-name="driving licence dl learner license ड्राइविंग लाइसेंस">
+        <div class="yojana-card-header">
+          <div class="yojana-icon" style="background:#E8F5E9;">🚗</div>
+          <div class="yojana-meta">
+            <div class="yojana-name">Driving Licence (DL)</div>
+            <span class="yojana-category" style="background:#E8F5E9;color:#2E7D32;">DL / Passport</span>
+          </div>
+        </div>
+        <div class="yojana-card-body">
+          <p class="yojana-desc">Learner Licence, Permanent DL, नवीनीकरण व सुधार — 2-Wheeler, 4-Wheeler व Commercial।</p>
+          <div class="docs-label">ज़रूरी दस्तावेज़</div>
+          <ul class="doc-list">
+            <li class="doc-item">आधार कार्ड</li>
+            <li class="doc-item">जन्म प्रमाण (DOB Proof)</li>
+            <li class="doc-item">निवास प्रमाण (Voter ID / Utility Bill)</li>
+            <li class="doc-item">पासपोर्ट साइज फोटो</li>
+            <li class="doc-item">Medical Fitness (Form 1-A)</li>
+            <li class="doc-item">Learner Licence (Permanent DL के लिए)</li>
+          </ul>
+        </div>
+        <div class="yojana-card-footer">
+          <span class="fee-badge">💰 शुरू से ₹200</span>
+          <a href="tel:+919414572537" class="apply-btn">आवेदन करें</a>
+        </div>
+      </div>
+
+      <!-- PASSPORT -->
+      <div class="yojana-card fade-in" data-category="license" data-name="passport new renewal tatkal पासपोर्ट नवीनीकरण">
+        <div class="yojana-card-header">
+          <div class="yojana-icon" style="background:#FCE4EC;">📮</div>
+          <div class="yojana-meta">
+            <div class="yojana-name">Passport आवेदन</div>
+            <span class="yojana-category" style="background:#FCE4EC;color:#880E4F;">DL / Passport</span>
+          </div>
+        </div>
+        <div class="yojana-card-body">
+          <p class="yojana-desc">नया Passport, नवीनीकरण व Tatkal सेवा — Online आवेदन व दस्तावेज़ सत्यापन सहायता।</p>
+          <div class="docs-label">ज़रूरी दस्तावेज़</div>
+          <ul class="doc-list">
+            <li class="doc-item">आधार कार्ड</li>
+            <li class="doc-item">10वीं की Marksheet (DOB Proof)</li>
+            <li class="doc-item">निवास प्रमाण</li>
+            <li class="doc-item">पासपोर्ट साइज फोटो (White background)</li>
+            <li class="doc-item">पुराना Passport (Renewal के लिए)</li>
+            <li class="doc-item">Mobile / Email ID</li>
+          </ul>
+        </div>
+        <div class="yojana-card-footer">
+          <span class="fee-badge">💰 सेवा शुल्क + सरकारी शुल्क</span>
+          <a href="tel:+919414572537" class="apply-btn">आवेदन करें</a>
+        </div>
+      </div>
+
+      <!-- COMPUTER JOB WORK -->
+      <div class="yojana-card fade-in" data-category="identity" data-name="computer job work typing printing data entry design कंप्यूटर टाइपिंग">
+        <div class="yojana-card-header">
+          <div class="yojana-icon" style="background:#E8EAF6;">💻</div>
+          <div class="yojana-meta">
+            <div class="yojana-name">Computer Job Work</div>
+            <span class="yojana-category" style="background:#E8EAF6;color:#283593;">कंप्यूटर सेवा</span>
+          </div>
+        </div>
+        <div class="yojana-card-body">
+          <p class="yojana-desc">Typing, Printing, Scanning, Data Entry, Resume, Banner Design व अन्य सभी कंप्यूटर कार्य।</p>
+          <div class="docs-label">सेवाएं उपलब्ध</div>
+          <ul class="doc-list">
+            <li class="doc-item">टाइपिंग (हिंदी / English)</li>
+            <li class="doc-item">Print / Scan / Photocopy</li>
+            <li class="doc-item">Resume / Biodata बनाना</li>
+            <li class="doc-item">Banner / Visiting Card Design</li>
+            <li class="doc-item">Data Entry Work</li>
+          </ul>
+        </div>
+        <div class="yojana-card-footer">
+          <span class="fee-badge">💰 कार्य अनुसार शुल्क</span>
+          <a href="tel:+919414572537" class="apply-btn">अभी करें</a>
+        </div>
+      </div>
+
+      <!-- LAND RECORDS -->
+      <div class="yojana-card fade-in" data-category="property" data-name="land records naksha jamabandi khasra khatoni girdawari भूमि जमाबंदी खसरा">
+        <div class="yojana-card-header">
+          <div class="yojana-icon" style="background:#E0F2F1;">🗺️</div>
+          <div class="yojana-meta">
+            <div class="yojana-name">भूमि रिकॉर्ड (Khasra / Naksha)</div>
+            <span class="yojana-category" style="background:#E0F2F1;color:#004D40;">भूमि रिकॉर्ड</span>
+          </div>
+        </div>
+        <div class="yojana-card-body">
+          <p class="yojana-desc">Online Jamabandi, Khasra, Naksha व Girdawari — भूमि सत्यापन व संपत्ति संबंधी उद्देश्यों के लिए।</p>
+          <div class="docs-label">ज़रूरी दस्तावेज़</div>
+          <ul class="doc-list">
+            <li class="doc-item">खसरा / प्लॉट नंबर</li>
+            <li class="doc-item">ग्राम / तहसील / जिले का नाम</li>
+            <li class="doc-item">मालिक का नाम (खोज के लिए)</li>
+            <li class="doc-item">आधार कार्ड (प्रमाणित प्रति के लिए)</li>
+          </ul>
+        </div>
+        <div class="yojana-card-footer">
+          <span class="fee-badge">💰 शुरू से ₹30</span>
+          <a href="tel:+919414572537" class="apply-btn">आवेदन करें</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ADVOCATE SHOWCASE -->
+<section class="advocate-bg" id="advocate">
+  <div class="section-max">
+    <div class="advocate-wrap fade-in">
+
+      <div class="advocate-photo-ring" style="position:relative;">
+        <div class="advocate-photo-inner">⚖️</div>
+        <div class="adv-ribbon">✦ Legal Expert</div>
+      </div>
+
+      <div>
+        <div class="adv-eyebrow">
+          <span></span>
+          Quick Showcase &nbsp;✦&nbsp; विशेष परिचय
+          <span></span>
+        </div>
+        <div class="adv-name">Advocate<br>Prakash Kumawat</div>
+        <div class="adv-designation">अधिवक्ता — न्यायालय, आसींद / भीलवाड़ा</div>
+        <div class="adv-divider"></div>
+        <p class="adv-desc">
+          अधिवक्ता प्रकाश कुमावत जी आसींद क्षेत्र के अनुभवी व विश्वसनीय अधिवक्ता हैं।
+          दीवानी, फौजदारी व राजस्व मामलों में विशेष दक्षता।
+          Kumawat eMitra &amp; Computers के साथ — शपथ पत्र, GAP Certificate व सभी
+          कानूनी दस्तावेज़ों की प्रमाणित सेवा अब एक ही छत के नीचे।
+        </p>
+        <div class="adv-tags">
+          <span class="adv-tag">⚖️ दीवानी मामले</span>
+          <span class="adv-tag">🔏 फौजदारी</span>
+          <span class="adv-tag">🏛️ राजस्व न्यायालय</span>
+          <span class="adv-tag">📝 शपथ पत्र / GAP</span>
+          <span class="adv-tag">📜 कानूनी दस्तावेज़</span>
+        </div>
+        <div class="adv-actions">
+          <a href="tel:+919414572537" class="adv-btn-gold">📞 अभी संपर्क करें</a>
+          <a href="https://wa.me/919414572537?text=Namaste!%20Advocate%20Prakash%20Kumawat%20ji%20se%20milna%20hai." target="_blank" class="adv-btn-outline">💬 WhatsApp करें</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="whyus-bg" id="about">
+  <div class="section-max">
+    <div class="section-header fade-in">
+      <div class="section-badge">⭐ हमें क्यों चुनें</div>
+      <h2 class="section-title">हम पर <span class="accent">भरोसा</span> क्यों करें?</h2>
+      <p class="section-subtitle">हम आसींद और आसपास के क्षेत्र के लिए भरोसेमंद सरकारी सेवा केंद्र हैं।</p>
+    </div>
+    <div class="whyus-grid">
+      <div class="why-card fade-in">
+        <div class="why-icon">⚡</div>
+        <div class="why-title">Same Day Delivery</div>
+        <div class="why-text">अधिकांश दस्तावेज़ व आवेदन उसी दिन पूरे। कोई अनावश्यक देरी या बार-बार चक्कर नहीं।</div>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-icon">🏛️</div>
+        <div class="why-title">सरकार अधिकृत</div>
+        <div class="why-text">वैध Kiosk ID वाले आधिकारिक राजस्थान eMitra ऑपरेटर। सभी सेवाएं 100% कानूनी व प्रमाणित।</div>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-icon">💰</div>
+        <div class="why-title">सबसे कम शुल्क</div>
+        <div class="why-text">केवल सरकार-निर्धारित सेवा शुल्क। कोई छिपा शुल्क नहीं, पूर्ण पारदर्शिता।</div>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-icon">⚖️</div>
+        <div class="why-title">Advocate की सुविधा</div>
+        <div class="why-text">Adv. प्रकाश कुमावत जी के साथ — GAP Certificate, शपथ पत्र व कानूनी सलाह उपलब्ध।</div>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-icon">📱</div>
+        <div class="why-title">WhatsApp Support</div>
+        <div class="why-text">आवेदन की स्थिति WhatsApp पर जानें। दुकान आए बिना भी सवाल पूछें व जानकारी लें।</div>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-icon">🔒</div>
+        <div class="why-title">डेटा सुरक्षा</div>
+        <div class="why-text">आपके व्यक्तिगत दस्तावेज़ व डेटा पूरी गोपनीयता के साथ संभाले जाते हैं — कभी दुरुपयोग नहीं।</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-bg" id="contact">
+  <div class="section-max">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="section-badge" style="background:rgba(255,255,255,0.1);color:var(--gold);">📍 हमसे मिलें</div>
+        <h2 class="section-title" style="color:white;text-align:left;">हमसे <span class="accent">संपर्क</span> करें</h2>
+        <p class="section-subtitle" style="text-align:left;color:rgba(255,255,255,0.65);">हमारे पास आएं, फोन करें या WhatsApp करें — हम हमेशा आपकी सेवा में तत्पर हैं।</p>
+
+        <div class="contact-items">
+          <a class="contact-item" href="tel:+919414572537">
+            <div class="contact-item-icon">📞</div>
+            <div>
+              <div class="contact-item-label">कॉल करें</div>
+              <div class="contact-item-value">+91 94145 72537</div>
+            </div>
+          </a>
+          <a class="contact-item" href="tel:+919001350008">
+            <div class="contact-item-icon">📱</div>
+            <div>
+              <div class="contact-item-label">वैकल्पिक नंबर</div>
+              <div class="contact-item-value">+91 90013 50008</div>
+            </div>
+          </a>
+          <a class="contact-item" href="https://wa.me/919414572537" target="_blank">
+            <div class="contact-item-icon">💬</div>
+            <div>
+              <div class="contact-item-label">WhatsApp करें</div>
+              <div class="contact-item-value">WhatsApp पर चैट करें →</div>
+            </div>
+          </a>
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div>
+              <div class="contact-item-label">पता</div>
+              <div class="contact-item-value">Sahu Tower के सामने, पंचायत समिति रोड, आसींद, भीलवाड़ा — 311301</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">🆔</div>
+            <div>
+              <div class="contact-item-label">eMitra कियोस्क ID</div>
+              <div class="contact-item-value">RJ-XXXX-XXXXXX</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hours-widget">
+          <div class="hours-title">🕐 दुकान का समय</div>
+          <div class="hour-row"><span class="hour-day">सोमवार – शुक्रवार</span><span class="hour-time">10:00 AM – 7:00 PM</span></div>
+          <div class="hour-row"><span class="hour-day">शनिवार</span><span class="hour-time">10:00 AM – 6:00 PM</span></div>
+          <div class="hour-row"><span class="hour-day">रविवार</span><span class="hour-time">11:00 AM – 3:00 PM</span></div>
+          <div class="hour-row"><span class="hour-day">सरकारी छुट्टी</span><span class="hour-time" style="color:#FF6B00;">पहले कॉल करें</span></div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap fade-in">
+        <h3>📩 हमें संदेश भेजें</h3>
+        <p>कोई भी सेवा या योजना के बारे में सवाल हो? नीचे फॉर्म भरें — हम जल्द ही WhatsApp पर जवाब देंगे।</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label>आपका नाम *</label>
+            <input type="text" id="f-name" placeholder="राम कुमार">
+          </div>
+          <div class="form-group">
+            <label>मोबाइल नंबर *</label>
+            <input type="tel" id="f-mobile" placeholder="98XXXXXXXX">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>सेवा का नाम</label>
+          <select id="f-service">
+            <option>सेवा चुनें...</option>
+            <optgroup label="── प्रमाण पत्र ──">
+              <option>जाति प्रमाण पत्र</option>
+              <option>मूल निवास प्रमाण पत्र</option>
+              <option>आय प्रमाण पत्र</option>
+              <option>जन आधार कार्ड</option>
+            </optgroup>
+            <optgroup label="── स्टाम्प / शपथ पत्र ──">
+              <option>E-Stamp / Stamp Paper</option>
+              <option>GAP / शपथ पत्र (Affidavit)</option>
+            </optgroup>
+            <optgroup label="── DL / Passport ──">
+              <option>Driving Licence (DL)</option>
+              <option>Passport आवेदन</option>
+              <option>PAN Card</option>
+            </optgroup>
+            <optgroup label="── योजनाएं ──">
+              <option>Chiranjeevi Yojana Registration</option>
+              <option>पालनहार योजना</option>
+              <option>वृद्धावस्था पेंशन (SSP)</option>
+            </optgroup>
+            <optgroup label="── शिक्षा / परीक्षा ──">
+              <option>छात्रवृत्ति / Scholarship Form</option>
+              <option>Online Vacancy Form</option>
+              <option>परीक्षा फॉर्म</option>
+            </optgroup>
+            <optgroup label="── अन्य ──">
+              <option>Computer Job Work</option>
+              <option>भूमि रिकॉर्ड</option>
+              <option>Bill Payment</option>
+              <option>अन्य</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>आपका संदेश / सवाल (वैकल्पिक)</label>
+          <textarea id="f-msg" placeholder="आपके पास कौन से दस्तावेज़ हैं, या आपको किस चीज़ में मदद चाहिए..."></textarea>
+        </div>
+        <button class="submit-btn" onclick="handleSubmit()">📨 WhatsApp पर संदेश भेजें</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">Kumawat eMitra & Computers</div>
+  <p>राजस्थान सरकार अधिकृत eMitra केंद्र | आसींद, भीलवाड़ा</p>
+  <div class="footer-links">
+    <a href="#services">सेवाएं</a>
+    <a href="#yojana">दस्तावेज़ सूची</a>
+    <a href="#advocate">Advocate Prakash Kumawat</a>
+    <a href="#about">हमारे बारे में</a>
+    <a href="#contact">संपर्क</a>
+  </div>
+  <p>📞 <a href="tel:+919414572537">+91 94145 72537</a> &nbsp;|&nbsp; <a href="tel:+919001350008">+91 90013 50008</a> &nbsp;|&nbsp; 📍 आसींद, भीलवाड़ा</p>
+  <p style="margin-top:1rem;font-size:0.68rem;color:rgba(255,255,255,0.22);">सभी सेवाएं राजस्थान सरकार eMitra दिशानिर्देशों के अनुसार। शुल्क सरकार द्वारा निर्धारित।</p>
+</footer>
+
+<!-- FLOATING WA -->
+<a class="wa-float" href="https://wa.me/919414572537?text=Namaste!%20Mujhe%20Kumawat%20eMitra%20ki%20services%20ke%20bare%20mein%20jankari%20chahiye." target="_blank" title="WhatsApp पर बात करें">💬</a>
+
+<script>
+// Fade-in observer
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+// Filter by category
+function filterByCategory(cat, btn) {
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('yojanaSearch').value = '';
+  document.querySelectorAll('.yojana-card').forEach(card => {
+    card.style.display = (cat === 'all' || card.dataset.category === cat) ? 'flex' : 'none';
+  });
+}
+
+// Search filter
+function filterCards(q) {
+  q = q.toLowerCase().trim();
+  document.querySelectorAll('.yojana-card').forEach(card => {
+    card.style.display = (q === '' || (card.dataset.name||'').includes(q)) ? 'flex' : 'none';
+  });
+  if (q !== '') document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+}
+
+// WhatsApp form submit
+function handleSubmit() {
+  const name    = document.getElementById('f-name').value || 'Customer';
+  const mobile  = document.getElementById('f-mobile').value || '';
+  const service = document.getElementById('f-service').value;
+  const msg     = document.getElementById('f-msg').value;
+  const text = encodeURIComponent(
+    `Namaste! Main ${name} hoon (${mobile}).\nService: ${service}` + (msg ? `\nMessage: ${msg}` : '')
+  );
+  window.open(`https://wa.me/919414572537?text=${text}`, '_blank');
+}
+
+// Nav shadow on scroll
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.boxShadow =
+    window.scrollY > 40 ? '0 4px 30px rgba(0,0,0,0.15)' : '0 2px 20px rgba(0,0,0,0.08)';
+});
+</script>
+</body>
+</html>
