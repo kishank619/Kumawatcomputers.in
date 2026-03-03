@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy PHP app to Azure Web App - Kumawatcomputers
+name: Build and deploy PHP app to Azure Web App - kumawatcomputers
 
 on:
   push:
@@ -56,15 +56,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_EB786A0465634F2C8DE5FFFEC59C43D6 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_AAA1CB80B69E47F1BEDBCDE6CE8A0597 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_D4A849DA5F184AEAACB8723781CFAD54 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_8C6417783D3F4CC489698E3C32CA3769 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_E4686D2281F84909900CB10F3A1A556E }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_71F458CC9EFC47A1AE1E9E8C07E5861B }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'Kumawatcomputers'
+          app-name: 'kumawatcomputers'
           slot-name: 'Production'
           package: .
           
